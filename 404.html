@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Perfectly Centered</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0f172a; /* Deep Dark Blue */
+            font-family: system-ui, -apple-system, sans-serif;
+            color: #f8fafc;
+            overflow: hidden;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* SVG Styling */
+        svg {
+            display: block;
+            margin-bottom: -20px; /* Pulls text closer to the spiral */
+        }
+
+        .spiral-path {
+            fill: none;
+            stroke: #60a5fa; /* Electric Blue */
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: draw 8s ease-in-out infinite alternate;
+        }
+
+        .spiral-container {
+            /* This centers the "focal point" of the spiral growth */
+            transform-origin: 200px 200px;
+            animation: rotate 40s linear infinite;
+        }
+
+        @keyframes draw {
+            0% { stroke-dashoffset: 2000; opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 0.5; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            letter-spacing: -2px;
+            color: #38bdf8;
+        }
+
+        p {
+            color: #94a3b8;
+            max-width: 300px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <svg width="400" height="400" viewBox="0 0 400 400">
+            <g class="spiral-container">
+                <path class="spiral-path" d="M200,200 
+                  a1,1 0 0,1 1,1 
+                  a1,1 0 0,1 -1,1 
+                  a2,2 0 0,1 -2,-2 
+                  a3,3 0 0,1 3,-3 
+                  a5,5 0 0,1 5,5 
+                  a8,8 0 0,1 -8,8 
+                  a13,13 0 0,1 -13,-13 
+                  a21,21 0 0,1 21,-21 
+                  a34,34 0 0,1 34,34 
+                  a55,55 0 0,1 -55,55 
+                  a89,89 0 0,1 -89,-89 
+                  a144,144 0 0,1 144,-144 
+                  a233,233 0 0,1 233,233 
+                  a377,377 0 0,1 -377,377" />
+            </g>
+        </svg>
+
+        <h1>404</h1>
+        <p>You’ve reached the edge of the sequence. This page does not exist.</p>
+    </div>
+
+</body>
+</html>

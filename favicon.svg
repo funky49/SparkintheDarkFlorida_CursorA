@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" fill="#fff"/>
+
+  <!-- Fibonacci-ish tiling blocks (high contrast outlines) -->
+  <g fill="none" stroke="#000" stroke-width="10">
+    <rect x="32" y="32" width="192" height="96"/>
+    <rect x="32" y="128" width="128" height="96"/>
+    <rect x="160" y="128" width="64" height="64"/>
+    <rect x="160" y="192" width="32" height="32"/>
+    <rect x="192" y="192" width="32" height="32"/>
+  </g>
+
+  <!-- Spiral -->
+  <path d="
+    M 224 128
+    A 96 96 0 0 0 128 32
+    A 64 64 0 0 0 64 96
+    A 48 48 0 0 0 112 144
+    A 32 32 0 0 0 144 112
+    A 20 20 0 0 0 124 92
+    A 12 12 0 0 0 112 104
+    A 7 7 0 0 0 119 111
+  " fill="none" stroke="#000" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
