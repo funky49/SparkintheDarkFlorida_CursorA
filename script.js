@@ -50,8 +50,20 @@ async function loadRandomQuote() {
     }
 }
 
+function displayEmail() {
+    const emailDisplay = document.getElementById('email-display');
+    if (emailDisplay) {
+        const user = 'steve';
+        const domain = 'sparkflorida';
+        const tld = 'org';
+        const email = user + '@' + domain + '.' + tld;
+        emailDisplay.innerHTML = `<a href="mailto:${email}">${email}</a>`;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     loadRandomQuote();
+    displayEmail();
 });
 
 console.log(`
