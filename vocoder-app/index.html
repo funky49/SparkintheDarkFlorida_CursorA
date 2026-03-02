@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2a2520">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Realistic Vocoder Mixer</title>
+  <link rel="stylesheet" href="vocoder.css">
+</head>
+<body>
+  <div class="app">
+    <div class="mixer-shell">
+      <header class="mixer-header">
+        <span class="brand">REALISTIC</span>
+        <h1 class="mixer-title">4-CH VOCODER MIXER</h1>
+      </header>
+
+      <main class="mixer-panel">
+        <p id="status" class="status">Allow mic to start.</p>
+
+        <section class="transport">
+          <button type="button" id="recordBtn" class="btn btn-record" aria-label="Record">REC</button>
+          <button type="button" id="stopBtn" class="btn btn-stop" disabled aria-label="Stop">STOP</button>
+          <button type="button" id="playBtn" class="btn btn-play" disabled aria-label="Play">PLAY</button>
+          <button type="button" id="downloadBtn" class="btn btn-download" disabled aria-label="Download">SAVE</button>
+        </section>
+
+        <section class="preset-row">
+          <span class="panel-label">PRESET</span>
+          <button type="button" class="knob-label knob-classic" data-preset="0" aria-pressed="true">CLASSIC</button>
+          <button type="button" class="knob-label knob-vp330" data-preset="1" aria-pressed="false">VP-330</button>
+          <div class="knob" id="knobContainer" role="group">
+            <input type="range" id="presetKnob" min="0" max="2" value="0" step="1" aria-label="Preset">
+            <span class="knob-dial" aria-hidden="true"></span>
+          </div>
+          <button type="button" class="knob-label knob-robot" data-preset="2" aria-pressed="false">ROBOT</button>
+        </section>
+
+        <section class="fader-row">
+          <div class="fader-block">
+            <span class="fader-label">MIX</span>
+            <span class="fader-sublabel">VOICE · SYNTH</span>
+            <div class="fader-wrap">
+              <input type="range" id="mixFader" class="fader fader-vertical" min="0" max="100" value="0" step="1" aria-label="Voice / Synth mix">
+              <span class="fader-value" id="mixFaderVal">0%</span>
+            </div>
+          </div>
+          <div class="fader-block">
+            <span class="fader-label">REVERB</span>
+            <div class="fader-wrap">
+              <input type="range" id="reverbFader" class="fader fader-vertical" min="0" max="100" value="0" step="1" aria-label="Reverb amount">
+              <span class="fader-value" id="reverbFaderVal">0</span>
+            </div>
+          </div>
+          <div class="fader-block">
+            <span class="fader-label">DELAY</span>
+            <div class="fader-wrap">
+              <input type="range" id="delayFader" class="fader fader-vertical" min="0" max="100" value="0" step="1" aria-label="Delay amount">
+              <span class="fader-value" id="delayFaderVal">0</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="knob-row">
+          <div class="knob-block">
+            <span class="panel-label">CARRIER</span>
+            <div class="knob small" data-knob="carrier">
+              <input type="range" id="carrierFreq" min="80" max="400" value="150" step="1" aria-label="Carrier Hz">
+              <span class="knob-dial" aria-hidden="true"></span>
+            </div>
+            <span id="carrierFreqVal" class="knob-value">150 Hz</span>
+          </div>
+          <div class="knob-block">
+            <span class="panel-label">BANDS</span>
+            <div class="knob small" data-knob="bands">
+              <input type="range" id="bands" min="4" max="16" value="8" step="1" aria-label="Bands">
+              <span class="knob-dial" aria-hidden="true"></span>
+            </div>
+            <span id="bandsVal" class="knob-value">8</span>
+          </div>
+        </section>
+
+        <section class="bottom-row">
+          <div class="vocoder-switch-wrap">
+            <span class="panel-label">VOCODER</span>
+            <label class="switch vintage">
+              <input type="checkbox" id="vocoderToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+        </section>
+      </main>
+
+      <footer class="mixer-footer">
+        <p>Mic only · No server</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="vocoder.js"></script>
+</body>
+</html>

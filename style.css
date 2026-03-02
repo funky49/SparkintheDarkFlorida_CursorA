@@ -147,6 +147,10 @@ h2 {
     margin-bottom: 20px;
 }
 
+.btw-card {
+    background: #dce0e6;
+}
+
 .headshot-placeholder {
     width: 150px;
     height: 150px;
@@ -256,6 +260,23 @@ footer {
     .navbar.navbar-shrink h1 {
         font-size: 1rem;
     }
+    
+    .social-links {
+        gap: 8px;
+    }
+    
+    .social-link {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .social-icon {
+        font-size: 1rem;
+    }
+    
+    .social-label {
+        font-size: 0.8rem;
+    }
 }
 
 /* Responsive Video Container */
@@ -277,39 +298,39 @@ footer {
 .social-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 10px;
     margin-top: 20px;
 }
 
 .social-link {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 15px 20px;
+    gap: 8px;
+    padding: 10px 14px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.9rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .social-link:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     color: #fff;
 }
 
 .social-icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     flex-shrink: 0;
 }
 
 .social-label {
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 #email-display {
